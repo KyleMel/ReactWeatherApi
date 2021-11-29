@@ -30,7 +30,8 @@ function App() {
         </div>
         {weatherdata !== null ? (
           <div className="main-container">
-            <h4>{weatherdata.current.condition.text}</h4>
+            <h2 className="condition">{weatherdata.current.condition.text}</h2>
+            <img className="icon" src={weatherdata.current.condition.icon} alt="weather icon" />
             <div className="temperature">
               <h3>Current Temp</h3>
               <h2>{weatherdata.current.temp_f}&deg;F</h2>
