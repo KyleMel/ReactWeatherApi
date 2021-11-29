@@ -1,17 +1,15 @@
-import React, {useState, userEffect, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {getWeatherData} from './component/Weather';
 
 function App() {
   const [weatherdata, setWeatherData] = useState(null);
   const [city, setCity] = useState('Des_Moines');
-  const [loading, setLoading] = useState(false);
 
   const getData = async () => {
     try{
       const data = await getWeatherData(city);
       setWeatherData(data);
-      console.log(data);
     }catch(error) {
       console.log(error.message); 
     }
@@ -53,5 +51,3 @@ function App() {
 
 export default App;
 
-/* 
-*/
